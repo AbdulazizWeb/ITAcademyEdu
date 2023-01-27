@@ -1,0 +1,23 @@
+﻿using ITAcademyEdu.Domain.Enums;
+
+namespace ITAcademyEdu.Domain.Entities
+{
+    public class Student
+    {
+        public Student()
+        {
+            Attendances = new HashSet<Attendance>();
+            StudentGroups = new HashSet<StudentGroup>();
+        }
+
+        public int Id { get; set; }
+        public string Fullname { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime CreateDateTime { get; set; }
+        public string Phone { get; set; }
+
+
+        public ICollection<Attendance> Attendances { get; set; }
+        public ICollection<StudentGroup> StudentGroups { get; set; }
+    }
+}

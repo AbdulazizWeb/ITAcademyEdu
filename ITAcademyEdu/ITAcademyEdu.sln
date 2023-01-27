@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITAcademyEdu.Api", "ITAcademyEdu.Api\ITAcademyEdu.Api.csproj", "{E21E322D-6141-46B2-9325-9249B1C4AA09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITAcademyEdu.Api", "ITAcademyEdu.Api\ITAcademyEdu.Api.csproj", "{E21E322D-6141-46B2-9325-9249B1C4AA09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITAcademyEdu.Domain", "ITAcademyEdu.Domain\ITAcademyEdu.Domain.csproj", "{C1A192E4-0E65-4DD3-8F75-CA87061A8EE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITAcademyEdu.Infrastructure", "ITAcademyEdu.Infrastructure\ITAcademyEdu.Infrastructure.csproj", "{0158264C-7E74-421F-B3CE-25D6FE3F47FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{E21E322D-6141-46B2-9325-9249B1C4AA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E21E322D-6141-46B2-9325-9249B1C4AA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E21E322D-6141-46B2-9325-9249B1C4AA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A192E4-0E65-4DD3-8F75-CA87061A8EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A192E4-0E65-4DD3-8F75-CA87061A8EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A192E4-0E65-4DD3-8F75-CA87061A8EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A192E4-0E65-4DD3-8F75-CA87061A8EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0158264C-7E74-421F-B3CE-25D6FE3F47FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0158264C-7E74-421F-B3CE-25D6FE3F47FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0158264C-7E74-421F-B3CE-25D6FE3F47FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0158264C-7E74-421F-B3CE-25D6FE3F47FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
