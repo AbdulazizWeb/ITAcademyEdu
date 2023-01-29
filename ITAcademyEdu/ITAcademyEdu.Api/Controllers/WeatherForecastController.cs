@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITAcademyEdu.Api.Controllers
@@ -9,7 +10,7 @@ namespace ITAcademyEdu.Api.Controllers
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -18,6 +19,8 @@ namespace ITAcademyEdu.Api.Controllers
             _logger = logger;
         }
 
+
+        [Authorize(Policy = "AdminActions")]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

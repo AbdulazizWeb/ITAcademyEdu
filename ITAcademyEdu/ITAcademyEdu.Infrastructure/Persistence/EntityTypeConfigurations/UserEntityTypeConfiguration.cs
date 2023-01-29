@@ -1,4 +1,5 @@
 ﻿using ITAcademyEdu.Domain.Entities;
+using ITAcademyEdu.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,6 +16,15 @@ namespace ITAcademyEdu.Infrastructure.Persistence.EntityTypeConfigurations
 
             builder.HasIndex(i => i.Username)
                 .IsUnique();
+
+            builder.HasData(new User()
+            {
+                Id = 1,
+                Username = "Admin",
+                PasswordHash = "CA5B9811BE39C13BA3F8265C006761214B85F36FFE177C482AA548A30FC2C8994F5AE33790A4AE6A302B65A05A906AAED4912F02C0E69FC6CE14A9C90AD998A0",
+                Role = UserRole.Admin,
+                Fullname = "Adminbek Adminov"
+            });
         }
     }
 }
