@@ -14,7 +14,7 @@ namespace ITAcademyEdu.Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int TeacherId { get; set; }
-       
+
         public User Teacher { get; set; }
         public ICollection<Lesson> Lessons { get; set; }
         public ICollection<StudentGroup> GroupStudents { get; set; }

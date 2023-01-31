@@ -19,7 +19,7 @@ namespace ITAcademyEdu.Api.Controllers
         public async Task<IActionResult> LoginAsync(LoginRequest request)
         {
             string token = await _authService.LoginAsync(request.UserName, request.Password);
-           
+
             return Ok(token);
         }
     }

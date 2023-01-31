@@ -1,11 +1,12 @@
-﻿using System.Security.Cryptography;
+﻿using ITAcademyEdu.Application.Abstractions;
+using System.Security.Cryptography;
 using System.Text;
 
-namespace ITAcademyEdu.Infrastructure.Utils
+namespace ITAcademyEdu.Infrastructure.Providers
 {
-    public class HashGenerator
+    public class HashProvider : IHashProvider
     {
-        public static string Generate(string password)
+        public string GetHash(string value)
         {
             const string pepper = "EduPepper";
             const int keySize = 64;
@@ -14,12 +15,12 @@ namespace ITAcademyEdu.Infrastructure.Utils
             HashAlgorithmName hashAlgorithm = HashAlgorithmName.SHA512;
 
             var hash = Rfc2898DeriveBytes.Pbkdf2(
-                Encoding.UTF8.GetBytes(password),
+                Encoding.UTF8.GetBytes(value),
                 new byte[0],
                 iterations,
                 hashAlgorithm,
-                keySize );
-            return Convert.ToHexString( hash ); 
+                keySize);
+            return Convert.ToHexString(hash);
         }
     }
 }

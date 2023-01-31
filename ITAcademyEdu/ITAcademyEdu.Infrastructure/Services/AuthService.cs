@@ -1,6 +1,6 @@
-﻿using ITAcademyEdu.Infrastructure.Abstractions;
+﻿using ITAcademyEdu.Application.Abstractions;
+using ITAcademyEdu.Infrastructure.Abstractions;
 using ITAcademyEdu.Infrastructure.Persistence;
-using ITAcademyEdu.Infrastructure.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITAcademyEdu.Infrastructure.Services
@@ -10,11 +10,13 @@ namespace ITAcademyEdu.Infrastructure.Services
 
         private readonly ApplicationDbContext _dbContext;
         private readonly ITokenService _tokenService;
+        private readonly IHashProvider _hashProvider;
 
-        public AuthService(ApplicationDbContext dbContext, ITokenService tokenService)
+        public AuthService(ApplicationDbContext dbContext, ITokenService tokenService, IHashProvider hashProvider)
         {
             _dbContext = dbContext;
             _tokenService = tokenService;
+            _hashProvider = hashProvider;
         }
 
         public async Task<string> LoginAsync(string username, string password)
@@ -28,7 +30,7 @@ namespace ITAcademyEdu.Infrastructure.Services
             }
 
 
-            if (user.PasswordHash != HashGenerator.Generate(password))
+            if (user.PasswordHash != _hashProvider.GetHash(password))
             {
                 throw new Exception("Password is wrong");
             }

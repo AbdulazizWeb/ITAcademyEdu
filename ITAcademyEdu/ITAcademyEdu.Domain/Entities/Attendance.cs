@@ -1,6 +1,4 @@
-﻿using ITAcademyEdu.Domain.Enums;
-
-namespace ITAcademyEdu.Domain.Entities
+﻿namespace ITAcademyEdu.Domain.Entities
 {
     public class Attendance
     {

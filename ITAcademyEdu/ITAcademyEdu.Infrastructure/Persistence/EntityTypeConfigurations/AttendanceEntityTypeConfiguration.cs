@@ -9,7 +9,7 @@ namespace ITAcademyEdu.Infrastructure.Persistence.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<Attendance> builder)
         {
             builder.HasKey(x => x.Id);
-           
+
             builder.HasOne(x => x.Lesson)
                 .WithMany(x => x.Attendances)
                 .HasForeignKey(x => x.LessonId);

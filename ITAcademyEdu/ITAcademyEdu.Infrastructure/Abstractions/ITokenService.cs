@@ -4,6 +4,6 @@ namespace ITAcademyEdu.Infrastructure.Abstractions
 {
     public interface ITokenService
     {
-        string GenerateAccessToken(User user); 
+        string GenerateAccessToken(User user);
     }
 }

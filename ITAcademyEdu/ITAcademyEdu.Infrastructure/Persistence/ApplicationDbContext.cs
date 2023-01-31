@@ -1,13 +1,14 @@
-﻿using ITAcademyEdu.Domain.Entities;
+﻿using ITAcademyEdu.Application.Abstractions;
+using ITAcademyEdu.Domain.Entities;
 using ITAcademyEdu.Infrastructure.Persistence.EntityTypeConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITAcademyEdu.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        :base(options)
+        : base(options)
         {
         }
 
@@ -17,7 +18,6 @@ namespace ITAcademyEdu.Infrastructure.Persistence
         public DbSet<StudentGroup> StudentGroups { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

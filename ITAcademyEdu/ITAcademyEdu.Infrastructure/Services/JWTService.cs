@@ -12,7 +12,7 @@ namespace ITAcademyEdu.Infrastructure.Services
     {
         private readonly IConfiguration _configuration;
 
-        public JWTService (IConfiguration configuration)
+        public JWTService(IConfiguration configuration)
         {
             _configuration = configuration;
         }
